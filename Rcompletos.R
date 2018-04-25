@@ -24,5 +24,5 @@ comp <- function(directorio, id){
 x <- "C:\Users\alfre\OneDrive\Documentos\GitHub\Software Actuarial III"
 y = 1:10 #332
 comp(x,y)
-xx <- c(1:100)
+
 
