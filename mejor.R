@@ -30,7 +30,7 @@ if (resultado == "ataque"){
   
 if(is.element(estado,outcome[,7])== FALSE) {  # en la columna 7 vienen los estados
     
-   stop("Estado inv·lido")  
+   stop("Estado inv√°lido")  
                                        
 }
 
@@ -40,14 +40,14 @@ if(is.element(estado,outcome[,7])== FALSE) {  # en la columna 7 vienen los estad
 
 tb <- as.data.frame(split(outcome[,c(2,resultado)], outcome[,7])[estado]) # thebest
 
-t <- c(as.numeric(paste(tb[,2])))           # vector de tasas
+t <- suppressWarnings(c(as.numeric(paste(tb[,2]))))           # vector de tasas
 
 n <- c(paste(tb[,1]))                       # vector de nombres  
 
 tb <- tb[order(t,n),]       # data frame original pero ya ordenado por tasa
                                   # de menor a mayor
 
-qn <-!is.na(c(as.numeric(paste(tb[,2]))))    # quitar-na (suprime los "na")
+qn <- suppressWarnings(!is.na(c(as.numeric(paste(tb[,2])))))    # quitar-na (suprime los "na")
 
 tb <- tb[qn,]
 
